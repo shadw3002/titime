@@ -1,6 +1,7 @@
 #include "textflag.h"
 
-TEXT rdtscp(SB),NOSPLIT,$0-8
+// func rdtscp() (uint64, uint64)
+TEXT ·rdtscp(SB),NOSPLIT,$0-8
     RDTSCP
     SHLQ    $32, DX
     ADDQ    DX, AX
